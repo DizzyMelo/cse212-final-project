@@ -4,6 +4,12 @@
 
 A stack is a data structure where information can be stored in a list. The main characteristic of a stack is that the last element added to the stack is the first to be removed (LIFO).
 
+
+ - **Purpose**
+ - **Performance**
+ - **Problems that can be Solved Using this Data Structure**
+ - **Common Errors**
+
 **Example**
 
 ```python

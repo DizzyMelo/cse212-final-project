@@ -3,6 +3,10 @@
 **Introduction**
 A linked list is a data structure where each element in the list keeps pointers indicating who is the next and prevvious elements. Each element is usually encapsulated is a Node object. Usually there is a class that keeps track of the first (head) and last (tail) element of the list. 
 
+ - **Purpose**
+ - **Performance**
+ - **Problems that can be Solved Using this Data Structure**
+ - **Common Errors**
 
 **Example**
 
