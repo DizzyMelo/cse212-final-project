@@ -117,6 +117,7 @@ class LinkedList:
 
 ```
 **Problem to Solve**
+
 Implement a function called hasCicle that checks if the linked list hast a cycle in it.
 A linked list has a cycle if there is a node that its next pointer points to a previous node.
 
