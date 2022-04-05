@@ -17,16 +17,16 @@ class BST:
         else:
             # Check the left side
             if root.val > val:
-                if root.left is None:
+                if root.left is None: # If the root.left is none, add the node to the left node
                     root.left = Node(val)
                 else:
-                    self._insert(root.left, val)
+                    self._insert(root.left, val) # Make recursive call on the left side
             #Check the right side
             else:
                 if root.right is None:
-                    root.right = Node(val)
+                    root.right = Node(val)# If the root.right is none, add the node to the roght node
                 else:
-                    self._insert(root.right, val)
+                    self._insert(root.right, val) # Make recursive call on the roght side
     
     def traverse(self):
         self._traverse(self.root)
@@ -35,9 +35,9 @@ class BST:
         if root is None:
             return
         
-        self._traverse(root.left)
-        print(root.val)
-        self._traverse(root.right)
+        self._traverse(root.left) # Make recursive call on the left side
+        print(root.val) # Print the current node val
+        self._traverse(root.right) # Make recursive call on the right side
 
     def findValue(self, val):
         '''
@@ -46,17 +46,17 @@ class BST:
             Try to implemnt it in O(long n) time
         '''
 
-        def dfs(root: Node):
+        def helper(root: Node):
             if root is None: return False
 
             if root.val == val:
                 return True
             if root.val > val:
-                return dfs(root.left)
+                return helper(root.left)
             else:
-                return dfs(root.right)
+                return helper(root.right)
 
-        return dfs(self.root)
+        return helper(self.root)
         
 bst = BST()
 
