@@ -17,7 +17,12 @@ Trees is a widely used abstract data structure. Similar to a linked list, trees 
 The purpose of trees is to efficiently organize data in order to optimize operations, such as insertion, deletion, and searches. 
 
 **Performance**
- 
+  
+|Command    |Description   | Python Code| Performance|
+|-----------|--------------|------------|------------|
+|insert(val) |Adds a new element to the tree  | insert()   | O(log n)       |
+|find(val) |Retrieves the element at the provided index   | find(val)      | O(log n)
+|remove(val) |Removes the last element from the stack an returns its value   | remvove(val)      | O(log n)       |
  
 **Problems that can be Solved Using this Data Structure**
 
@@ -73,7 +78,7 @@ class BST:
         self._traverse(root.left) # Make recursive call on the left side
         print(root.val) # Print the current node val
         self._traverse(root.right) # Make recursive call on the right side
-        
+
     def findValue(self, val):
         '''
             Implement the findValue function to return true if
