@@ -88,4 +88,4 @@ class BST:
 
 Implement the findValue function to return true if the value is inside the BST and false if not. Implemnt the solution in O(long n) time complexity.
 
-[Solution](binary_search_tree.py)
+[Solution](binary_search_tree_solution.py)

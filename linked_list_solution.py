@@ -1,35 +1,3 @@
-# Linked List
-
-**Introduction**
-
-A linked list is a data structure where each element in the list keeps pointers indicating who is the next and prevvious elements. Each element is usually encapsulated is a Node object. Usually there is a class that keeps track of the first (head) and last (tail) element of the list. 
-
- - **Purpose**
- 
- Linked Lists are very useful when resizing the list is a problem. Linked lists have no problem to increase or shrink its size. Operations such as insertion and deletion are very efficient, and can be acomplished in constant time.
- - **Performance**
-
- |Command    |Description   | Python Code| Performance|
- |-----------|--------------|------------|------------|
- |insert_head(data) |Adds a new element to the stack   | append()   | O(1)       |
- |remove_head()      |Removes one element from the stack an returns its value   | pop()      | O(1)       |
- |size()     |Returns the number of elements in the list   | len()      | O(N)       |
- |empty()    |Checks if the list has at least one element   | empty()      | O(1)       |
- |getAt(index)    |Retrieves an element at certain position   | get()      | O(N)       |
-
-
- - **Problems that can be Solved Using this Data Structure**
-
- Linked lists can be used to implement queues and stacks efficiently. When it comes to memory allocation, linked lists is also a great choice, as it allocates memory dynamically and doesn't need more memory allocation before adding a new element. Lists and arrays need to allocate memory when they are created, even though the whole space is not going to be used, and that can be a problem when dealing with huge amounts of data.
- 
- - **Common Errors**
-
-Some common errors while working with a linked list is the idea of pointers. Keeping track of where each pointer is pointing to is not an easy task and may take a while until it becomes natural. Removing an element which is located in the middle of the list is another moment when people make mistakes by not disconnecting and connecting the pointers proplerly.
-
-**Example**
-
-```python
-# Example of a Node class
 class Node:
     def __init__(self, val, next = None, prev = None):
         self.val = val
@@ -112,17 +80,27 @@ class LinkedList:
         return True if self.head is None else False
 
     def hasCycle(self):
-        '''
-        This function should check if the linked list has a cyle. 
-        A linked list has a cycle if there is a node that its next pointer 
-        points to a previous node.
-        '''
-        pass
+        visited = set() # Initialize an empty set
+        curr = self.head # Set the current node as the head
 
-```
-**Problem to Solve**
+        while curr: # iteration condition
+            if curr.val in visited: # Check if the current not val is in the set
+                return True # If the condition is satisfied, there is a cycle. Return True
+            visited.add(curr.val) # If not, add the current node val to the set
+            curr = curr.next # Move the current node to the next element
+        
+        return False # If no cycle was found, return False
 
-Implement a function called hasCicle that checks if the linked list hast a cycle in it.
-A linked list has a cycle if there is a node that its next pointer points to a previous node.
+llist = LinkedList()
 
-[Solution](linked_list_solution.py)
+llist.insert_head(5)
+llist.insert_head(6)
+llist.insert_head(2)
+llist.insert_head(9)
+llist.insert_head(4)
+
+print(llist.hasCycle())
+
+llist.head.next.next.next = llist.head.next.next
+
+print(llist.hasCycle())
